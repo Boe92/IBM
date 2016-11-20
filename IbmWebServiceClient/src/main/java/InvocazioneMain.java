@@ -6,7 +6,7 @@ public class InvocazioneMain {
 		
 		Invocazione invocazione = new Invocazione();
 		
-		Response risposta = invocazione.richiestaFatturaByCode("ABC").invoke();
+		Response risposta = invocazione.richiestaFatturaByCode("/ABC").invoke();
 		
 		Fattura f = risposta.readEntity(Fattura.class);
 		
