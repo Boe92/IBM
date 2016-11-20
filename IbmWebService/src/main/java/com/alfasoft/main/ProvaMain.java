@@ -17,5 +17,4 @@ public class ProvaMain {
 		f.setCodice_fattura("ABC");
 		fd._insert(f);
 	}
-
 }
