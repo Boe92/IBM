@@ -3,10 +3,10 @@ import javax.ws.rs.core.Response;
 public class InvocazioneMain {
 
 	public static void main(String[] args) {
-		
+		System.out.println();
 		Invocazione invocazione = new Invocazione();
 		
-		Response risposta = invocazione.richiestaFatturaByCode("/ABC").invoke();
+		Response risposta = invocazione.richiestaFatturaByCode("ABC").invoke();
 		
 		Fattura f = risposta.readEntity(Fattura.class);
 		

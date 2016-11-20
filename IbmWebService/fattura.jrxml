@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
-<!-- 2016-11-20T16:13:22 -->
+<!-- 2016-11-20T16:26:13 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fattura" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ce920d2-99a3-4626-9729-7606e04f3773">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
@@ -31,7 +31,11 @@
 		</box>
 	</style>
 	<subDataset name="FattureDataSource" uuid="344953f1-b2eb-41f9-9b5f-cc7df7e1ee5e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<parameter name="importo" class="java.lang.Double"/>
+		<parameter name="data_emissione" class="java.util.Date"/>
+		<parameter name="codice_fattura" class="java.lang.String"/>
 		<queryString>
 			<![CDATA[]]>
 		</queryString>
@@ -39,7 +43,8 @@
 		<field name="data_emissione" class="java.util.Date"/>
 		<field name="codice_fattura" class="java.lang.String"/>
 		<variable name="importo" class="java.lang.Double"/>
-		<variable name="Variable_1" class="java.lang.String"/>
+		<variable name="data_emissione" class="java.util.Date"/>
+		<variable name="codice_fattura" class="java.lang.String"/>
 	</subDataset>
 	<queryString>
 		<![CDATA[]]>
