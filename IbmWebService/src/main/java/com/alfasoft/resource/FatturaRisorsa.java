@@ -49,23 +49,18 @@ public class FatturaRisorsa {
 		fs.modificaFattura(f);
 	}
 	
-	
-	
-	
-	/********* IN FASE DI SVILUPPO *********/
-	
-	@Path("/{Anno}") // si riferisce al PathParam, ovvero al parametro che stiamo passando e non come indirizzo
+	@Path("/cerca/{Anno}")					
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Fattura getFatturaAnno(@PathParam("Anno") String anno) {
-		return null;
+	public List<Fattura> getFatturaAnno(@PathParam("Anno") String anno) {
+		return new ArrayList<Fattura>(fs.cercaFatture(anno));
 	}
-	
-	@Path("/{Anno}/{Mese}") // si riferisce al PathParam, ovvero al parametro che stiamo passando e non come indirizzo
+
+	@Path("/cerca/{Anno}/{Mese}") 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Fattura getFatturaAnnoMese(@PathParam("Anno") String anno, @PathParam("Mese") String mese) {
-		return null;
+	public List<Fattura> getFatturaAnnoMese(@PathParam("Anno") String anno, @PathParam("Mese") String mese) {
+		return new ArrayList<Fattura>(fs.cercaFatture(anno, mese));
 	}
 	
 	@DELETE

@@ -35,6 +35,11 @@
 				<version>5.1.0.Final</version>
 			</dependency>
 			<dependency>
+		    	<groupId>com.hynnet</groupId>
+		    	<artifactId>oracle-driver-ojdbc6</artifactId>
+		    	<version>12.1.0.1</version>
+		    </dependency>
+			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
 				<version>5.1.40</version>
@@ -54,8 +59,8 @@
 					<version>2.5.1</version>
 					<inherited>true</inherited>
 					<configuration>
-						<source>1.8</source>
-						<target>1.8</target>
+						<source>1.7</source>
+						<target>1.7</target>
 					</configuration>
 				</plugin>
 			</plugins>
