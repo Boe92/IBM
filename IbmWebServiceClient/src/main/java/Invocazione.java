@@ -6,17 +6,16 @@ import javax.ws.rs.client.WebTarget;
 public class Invocazione {
 
 	private Client cliente= ClientBuilder.newClient();
-	private WebTarget baseTarget = 	cliente.target("http://localhost:5050/IbmWebService/webapi");
-	private WebTarget dipTarget= baseTarget.path("/risorsa");
+	private WebTarget baseTarget = 	cliente.target("http://localhost:8085/AziendaWebService/webapi");
+	private WebTarget dipTarget= baseTarget.path("/listaBuste");
 	
 	public Invocazione() {
-		//baseTarget= cliente.target("http://localhost:5050/IbmWebService/webapi");
-		//dipTarget= baseTarget.path("/risorsa");
+		
 	}
 	
-	public Invocation richiestaFatturaByCode(String code){
+	public Invocation richiestaBustaPagaByCode(){
 		
-		return dipTarget.path(code).request().buildGet();
+		return dipTarget.request().buildGet();
 	}
 	
 	

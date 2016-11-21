@@ -1,17 +1,22 @@
+import java.util.List;
+
 import javax.ws.rs.core.Response;
 
 public class InvocazioneMain {
 
 	public static void main(String[] args) {
-		System.out.println();
+		
 		Invocazione invocazione = new Invocazione();
 		
-		Response risposta = invocazione.richiestaFatturaByCode("ABC").invoke();
+		Response risposta = invocazione.richiestaBustaPagaByCode().invoke();
 		
-		Fattura f = risposta.readEntity(Fattura.class);
+		@SuppressWarnings("unchecked")
+		List<BustaPaga> buste = (List<BustaPaga>) risposta.readEntity(BustaPaga.class);
 		
-		System.out.println(f.getImporto()+ " " + f.getData_emissione()+ " " + f.getCodice_fattura());
-
+		for(BustaPaga bp : buste) {
+			System.out.println(bp.getImporto()+ " " + bp.getData_emissione()+ " " + bp.getCodice_busta());
+		}
+		
 	}
 
 }

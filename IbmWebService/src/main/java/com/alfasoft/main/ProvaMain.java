@@ -27,8 +27,8 @@ public class ProvaMain {
 		Fattura f = new Fattura();
 		
 		f.setData_emissione(d);
-		f.setImporto(1234);
-		f.setCodice_fattura("ABC");
+		f.setImporto(9876);
+		f.setCodice_fattura("GHI");
 		fd._insert(f);
 		
 
