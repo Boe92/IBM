@@ -43,7 +43,7 @@ public class FatturaServizi {
 			Date date = f.getData_emissione();
 			if (date != null) {
 				Calendar cal = Calendar.getInstance();
-				cal.setTime(date);
+				cal.setTime(date); 
 				int year = cal.get(Calendar.YEAR);
 				if (Integer.parseInt(anno) == year) {
 					out.add(f);
