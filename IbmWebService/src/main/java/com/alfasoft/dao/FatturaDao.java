@@ -90,10 +90,7 @@ public class FatturaDao {
 			tx=session.getTransaction();
 			tx.begin();
 			
-			//Query query = (Query)session.createQuery("update Fattura where id = :campo1"); 
-			//.setInteger("campo1", id);
 			session.update(f);
-			//query.executeUpdate();
 			
 			tx.commit(); 
 		}catch(Exception ex){

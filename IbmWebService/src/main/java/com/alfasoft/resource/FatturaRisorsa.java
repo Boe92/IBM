@@ -3,6 +3,7 @@ package com.alfasoft.resource;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -11,6 +12,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import com.alfasoft.entita.Fattura;
@@ -25,8 +27,10 @@ public class FatturaRisorsa {
 	/********* FUNZIONANTI *********/
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void aggiungiFattura(Fattura f) {
-		fs.inserisciFattura(f);
+	public void aggiungiFattura(Fattura f, @Context HttpServletRequest request) {
+		String path = request.getServletContext().getRealPath("jasper/fattura.jasper");
+		
+		fs.inserisciFattura(f, path);
 	}
 	
 	@Path("/{OggettoFattura}") // si riferisce al PathParam, ovvero al parametro che stiamo passando e non come indirizzo
@@ -68,4 +72,5 @@ public class FatturaRisorsa {
 	public void eliminaFattura(int id) {
 		fs.eliminaFattura(id);
 	}
+
 }
