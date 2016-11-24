@@ -11,13 +11,14 @@ public class Invocazione {
 	private Client cliente= ClientBuilder.newClient();
 	private WebTarget baseTarget = 	cliente.target("http://localhost:5050/IbmWebService/webapi");
 	private WebTarget dipTarget = baseTarget.path("/risorsa");
+	Fattura fattura;
 	
 	public Invocazione() {
 		
 	}
 	
 	public Invocation richiestaBustaPagaByCode(){
-		Fattura fattura = new Fattura(12,1234, "ZXC", new Date());
+		fattura = new Fattura(12,1234, "ZXC", new Date());
 		return dipTarget.request().buildPost(Entity.json(fattura));
 	}
 	
