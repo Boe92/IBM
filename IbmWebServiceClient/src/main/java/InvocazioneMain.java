@@ -1,4 +1,5 @@
-import java.util.List;
+
+import javax.ws.rs.core.Response;
 
 public class InvocazioneMain {
 
@@ -6,12 +7,14 @@ public class InvocazioneMain {
 		
 		Invocazione invocazione = new Invocazione();
 		
-		//Response risposta = invocazione.richiestaBustaPagaByCode().invoke();
+		Response risposta = invocazione.richiestaBustaPagaByCode().invoke();
 		
-		List<BustaPaga> buste = invocazione.getAllBuste();
-		
-		for(BustaPaga bp : buste) {
-			System.out.println(bp.getImporto()+ " " + bp.getData_emissione()+ " " + bp.getCodice_busta());
-		}
+		risposta.close();
+
+		//		List<BustaPaga> buste = invocazione.getAllBuste();
+//		
+//		for(BustaPaga bp : buste) {
+//			System.out.println(bp.getImporto()+ " " + bp.getData_emissione()+ " " + bp.getCodice_busta());
+//		}
 	}
 }

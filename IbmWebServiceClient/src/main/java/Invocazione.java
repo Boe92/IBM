@@ -1,28 +1,28 @@
-import java.util.List;
+import java.util.Date;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
 
 public class Invocazione {
 
 	private Client cliente= ClientBuilder.newClient();
-	private WebTarget baseTarget = 	cliente.target("http://10.0.1.149:8086/AziendaWebService/webapi");
-	private WebTarget dipTarget= baseTarget.path("/listaBuste");
+	private WebTarget baseTarget = 	cliente.target("http://localhost:5050/IbmWebService/webapi");
+	private WebTarget dipTarget = baseTarget.path("/risorsa");
 	
 	public Invocazione() {
 		
 	}
 	
 	public Invocation richiestaBustaPagaByCode(){
-		
-		return dipTarget.request().buildGet();
+		Fattura fattura = new Fattura(12,1234, "ZXC", new Date());
+		return dipTarget.request().buildPost(Entity.json(fattura));
 	}
 	
-	public List<BustaPaga> getAllBuste() {
-		return dipTarget.request().get().readEntity(new GenericType<List<BustaPaga>>(){});
-	}
+//	public List<BustaPaga> getAllBuste() {
+//		return dipTarget.request().get().readEntity(new GenericType<List<BustaPaga>>(){});
+//	}
 	
 }
