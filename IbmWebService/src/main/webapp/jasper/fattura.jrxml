@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-11-24T09:33:24 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fattura" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ce920d2-99a3-4626-9729-7606e04f3773">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="FattureDataSource" uuid="344953f1-b2eb-41f9-9b5f-cc7df7e1ee5e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="importo" class="java.lang.Double"/>
+		<parameter name="data_emissione" class="java.util.Date"/>
+		<parameter name="codice_fattura" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="importo" class="java.lang.Double"/>
+		<field name="data_emissione" class="java.util.Date"/>
+		<field name="codice_fattura" class="java.lang.String"/>
+		<variable name="importo" class="java.lang.Double"/>
+		<variable name="data_emissione" class="java.util.Date"/>
+		<variable name="codice_fattura" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="importo" class="java.lang.Double"/>
+	<parameter name="data_emissione" class="java.util.Date"/>
+	<parameter name="codice_fattura" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="9" y="9" width="100" height="30" uuid="15cb7921-056e-424d-b9a6-905cdf0827f6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="480" y="0" width="80" height="80" uuid="d9ba914e-a7e9-4a21-b233-ac31d9bfa793"/>
+				<imageExpression><![CDATA["src/main/webapp/img/alfaSoftSito.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="2" width="244" height="30" uuid="27af4078-8c35-4fb8-90ab-012a5f556a99"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista Fatture dell'azienda]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="336" splitType="Stretch">
+			<textField>
+				<reportElement x="24" y="37" width="100" height="30" uuid="97ca0ee3-028c-4952-a666-3d0766b8c028"/>
+				<textFieldExpression><![CDATA["Importo"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="80" width="100" height="30" uuid="91b0ab3e-b61a-4f83-9d71-89c79fa6ada6"/>
+				<textFieldExpression><![CDATA["Data emissione"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="120" width="100" height="30" uuid="b79e79ff-c53f-4508-a90e-b06666a7b6cc"/>
+				<textFieldExpression><![CDATA["Codice fattura"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="40" width="100" height="30" uuid="a6df039e-5276-4c0b-9518-d2d0453e4afb"/>
+				<textFieldExpression><![CDATA[$P{importo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="80" width="100" height="30" uuid="ee3f355d-bade-4bdf-a913-a0107e520e04"/>
+				<textFieldExpression><![CDATA[$P{data_emissione}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="120" width="100" height="30" uuid="a4b05bdb-1afa-4963-ba18-7d4829e1a2d4"/>
+				<textFieldExpression><![CDATA[$P{codice_fattura}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
